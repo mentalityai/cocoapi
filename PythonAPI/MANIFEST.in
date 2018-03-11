@@ -1,0 +1,6 @@
+include README.txt
+include license.txt
+include pycocoDemo.ipynb
+include pycocoEvalDemo.ipynb
+recursive-include pycocotools *
+recursive-include common *

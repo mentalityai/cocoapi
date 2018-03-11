@@ -9,8 +9,8 @@ import numpy as np
 ext_modules = [
     Extension(
         'pycocotools._mask',
-        sources=['../common/maskApi.c', 'pycocotools/_mask.pyx'],
-        include_dirs = [np.get_include(), '../common'],
+        sources=['pycocotools/_mask.pyx', 'common/maskApi.c'],
+        include_dirs = [np.get_include(), 'common'],
         extra_compile_args=['-Wno-cpp', '-Wno-unused-function', '-std=c99'],
     )
 ]
@@ -18,7 +18,13 @@ ext_modules = [
 setup(name='pycocotools',
       packages=['pycocotools'],
       package_dir = {'pycocotools': 'pycocotools'},
-      version='2.0',
+      author='Piotr Dollar and Tsung-Yi Lin',
+      author_email='pdollar@gmail.com',
+      url='https://github.com/cocodataset/cocoapi',
+      license='BSD',
+      description='Tools for working with the MSCOCO dataset',
+      classifiers=['License :: OSI Approved :: BSD License'],
+      version='2.0.0',
       ext_modules=
           cythonize(ext_modules)
       )
